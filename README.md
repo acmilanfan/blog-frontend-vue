@@ -1,1 +1,1 @@
-# blog-frontend on VueJS
+# Generic blog frontend on Vue.js
