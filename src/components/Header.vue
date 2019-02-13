@@ -6,9 +6,11 @@
 
 <script>
 export default {
-  name: '123',
-  props: {
-    msg: String
+  name: 'Header',
+  data() {
+    return {
+      msg: "Generic blog header"
+    }
   }
 }
 </script>
