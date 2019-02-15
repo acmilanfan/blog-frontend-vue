@@ -1,6 +1,6 @@
 <template>
     <ul v-if="posts && posts.length">
-        <li v-for="post of posts">
+        <li v-for="post in posts" :key="post.id">
             <p>{{ post.author }}</p>
             <p>{{ post.creationDate }}</p>
             <p>{{ post.rating }}</p>
