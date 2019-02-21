@@ -1,31 +1,19 @@
 <template>
-    <div id="app">
-        <img alt="Vue logo" src="./assets/logo.png">
-        <Header/>
-        <PostsList/>
-    </div>
+    <!--<div id="app">-->
+        <!--<img alt="Vue logo" src="./assets/logo.png">-->
+        <!--<Header/>-->
+        <!--<PostsList/>-->
+    <!--</div>-->
+    <Sandbox/>
 </template>
 
 <script>
-    import Header from './components/Header.vue'
-    import PostsList from "@/components/PostsList";
+    import Sandbox from './components/Sandbox'
 
     export default {
-        name: 'app',
+        name: 'App',
         components: {
-            PostsList,
-            Header
+            Sandbox
         }
     }
 </script>
-
-<style>
-    #app {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-        margin-top: 60px;
-    }
-</style>
