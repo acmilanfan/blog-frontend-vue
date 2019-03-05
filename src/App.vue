@@ -1,19 +1,24 @@
 <template>
-    <!--<div id="app">-->
-        <!--<img alt="Vue logo" src="./assets/logo.png">-->
-        <!--<Header/>-->
-        <!--<PostsList/>-->
-    <!--</div>-->
-    <Sandbox/>
+    <v-app id="app" :dark="dark">
+        <component :is="layout">
+            <router-view/>
+        </component>
+    </v-app>
 </template>
 
 <script>
-    import Sandbox from './components/Sandbox'
+    const default_layout = "default";
 
     export default {
-        name: 'App',
-        components: {
-            Sandbox
+        computed: {
+            layout() {
+                return (this.$route.meta.layout || default_layout) + "-layout";
+            }
+        },
+        data() {
+            return {
+                dark: true
+            }
         }
     }
 </script>

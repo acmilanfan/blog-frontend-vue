@@ -55,11 +55,7 @@
                         tags: 'Loading...',
                         creationDate: new Date()
                     }
-                ],
-                dark: true,
-                primaryDrawer: {
-                    model: false
-                }
+                ]
             }
         },
         mounted() {

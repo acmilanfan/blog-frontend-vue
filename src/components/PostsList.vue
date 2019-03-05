@@ -1,18 +1,28 @@
 <template>
-    <ul v-if="posts && posts.length">
-        <li v-for="post in posts" :key="post.id">
-            <p>{{ post.author }}</p>
-            <p>{{ post.creationDate }}</p>
-            <p>{{ post.rating }}</p>
-        </li>
-    </ul>
+    <v-content>
+        <v-container fluid v-for="post in posts" :key="post.id">
+            <v-layout align-center justify-center>
+                <v-flex xs10>
+                    <v-card>
+                        <v-card-title>{{ post.title }}</v-card-title>
+                        <v-card-text>
+                            {{ post.preview }}
+                        </v-card-text>
+                        <v-card-actions>
+                            <v-spacer></v-spacer>
+                            <v-btn flat color="primary">Read more</v-btn>
+                        </v-card-actions>
+                    </v-card>
+                </v-flex>
+            </v-layout>
+        </v-container>
+    </v-content>
 </template>
 
 <script>
     import axios from 'axios'
 
     export default {
-        name: "PostsList",
         data() {
             return {
                 posts: [
@@ -36,7 +46,3 @@
         }
     }
 </script>
-
-<style scoped>
-
-</style>
