@@ -13,11 +13,14 @@
         computed: {
             layout() {
                 return (this.$route.meta.layout || default_layout) + "-layout";
-            }
-        },
-        data() {
-            return {
-                dark: true
+            },
+            dark: {
+                get() {
+                    return this.$store.state.dark;
+                },
+                set(dark) {
+                    this.$store.commit('set_dark', dark);
+                }
             }
         }
     }

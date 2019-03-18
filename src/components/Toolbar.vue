@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-navigation-drawer
-                v-model="drawer.model"
+                v-model="drawer"
                 floating
                 clipped
                 absolute
@@ -10,7 +10,7 @@
         ></v-navigation-drawer>
         <v-toolbar clipped-left app absolute>
             <v-toolbar-side-icon
-                    @click.stop="drawer.model = !drawer.model"
+                    @click.stop="switch_model"
             ></v-toolbar-side-icon>
             <v-toolbar-title>Vuetify</v-toolbar-title>
         </v-toolbar>
@@ -19,11 +19,19 @@
 
 <script>
     export default {
-        data() {
-            return {
-                drawer: {
-                    model: false
+        computed: {
+            drawer: {
+                get() {
+                    return this.$store.state.drawer.model;
+                },
+                set(drawer) {
+                    this.$store.commit('set_drawer', drawer);
                 }
+            }
+        },
+        methods: {
+            switch_model() {
+                this.$store.commit('drawer_model');
             }
         }
     }
