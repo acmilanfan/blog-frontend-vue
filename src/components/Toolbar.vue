@@ -5,6 +5,13 @@
                     @click.stop="switch_model"
             ></v-toolbar-side-icon>
             <v-toolbar-title>Vuetify</v-toolbar-title>
+            <v-spacer/>
+            <v-text-field
+                    flat
+                    hide-details
+                    solo-inverted
+                    style="max-width: 300px;"
+            ></v-text-field>
         </v-toolbar>
     </div>
 </template>
