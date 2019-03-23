@@ -10,7 +10,7 @@
                         </v-card-text>
                         <v-card-actions>
                             <v-spacer></v-spacer>
-                            <v-btn flat color="primary">Read more</v-btn>
+                            <v-btn to="/post" flat color="primary">Read more</v-btn>
                         </v-card-actions>
                     </v-card>
                 </v-flex>
