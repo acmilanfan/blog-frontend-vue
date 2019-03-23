@@ -14,6 +14,11 @@ export default new Router({
             component: require("@/pages/Home.vue").default
         },
         {
+            path: "/about",
+            name: "about",
+            component: () => import("@/pages/About.vue")
+        },
+        {
             path: "/post",
             name: "post",
             meta: {layout: "post"},

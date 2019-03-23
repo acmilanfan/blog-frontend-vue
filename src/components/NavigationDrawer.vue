@@ -7,12 +7,19 @@
                 absolute
                 overflow
                 app
-        ></v-navigation-drawer>
+        >
+            <Menu/>
+        </v-navigation-drawer>
     </div>
 </template>
 
 <script>
+    import Menu from '@/components/Menu';
+
     export default {
+        components: {
+            Menu
+        },
         computed: {
             drawer: {
                 get() {
