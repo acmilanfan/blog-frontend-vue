@@ -19,9 +19,10 @@ export default new Router({
             component: () => import("@/pages/About.vue")
         },
         {
-            path: "/post",
+            path: "/post/:id",
             name: "post",
-            meta: {layout: "post"},
+            meta: {layout: "post-layout"},
+            props: true,
             component: () => import("@/pages/Post.vue")
         },
         {

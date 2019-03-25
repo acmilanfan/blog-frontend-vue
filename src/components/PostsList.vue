@@ -10,7 +10,7 @@
                         </v-card-text>
                         <v-card-actions>
                             <v-spacer></v-spacer>
-                            <v-btn to="/post" flat color="primary">Read more</v-btn>
+                            <v-btn :to="read_more_route(post)" flat color="primary">Read more</v-btn>
                         </v-card-actions>
                     </v-card>
                 </v-flex>
@@ -41,8 +41,13 @@
         mounted() {
             axios.get('http://localhost:8080/post')
                 .then(response => {
-                    this.posts = response.data
-                })
+                    this.posts = response.data;
+                });
+        },
+        methods: {
+            read_more_route(post) {
+                return '/post/' + post.id;
+            }
         }
     }
 </script>
