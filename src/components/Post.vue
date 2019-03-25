@@ -6,7 +6,7 @@
                     <v-card>
                         <v-card-title>{{ post.title }}</v-card-title>
                         <v-card-text>
-                            {{ post.preview }}
+                            {{ post.content }}
                         </v-card-text>
                     </v-card>
                 </v-flex>
@@ -30,7 +30,7 @@
                     preview: 'Loading...',
                     tags: 'Loading...',
                     creationDate: new Date(),
-                    content: 'Loading...',
+                    content: 'Loading content...',
                 }
             }
         },
