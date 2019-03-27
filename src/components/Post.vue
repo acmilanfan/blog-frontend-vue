@@ -6,7 +6,7 @@
                     <v-card>
                         <v-card-title>{{ post.title }}</v-card-title>
                         <v-card-text>
-                            {{ post.content }}
+                            <markdown :source="post.content"/>
                         </v-card-text>
                     </v-card>
                 </v-flex>
@@ -16,10 +16,14 @@
 </template>
 
 <script>
-    import axios from 'axios'
+    import axios from 'axios';
+    import markdown from 'vue-markdown';
 
     export default {
         props: ['id'],
+        components: {
+            markdown
+        },
         data() {
             return {
                 post: {
@@ -30,7 +34,7 @@
                     preview: 'Loading...',
                     tags: 'Loading...',
                     creationDate: new Date(),
-                    content: 'Loading content...',
+                    content: '# Loading content...',
                 }
             }
         },
@@ -40,5 +44,5 @@
                     this.post = response.data;
                 });
         }
-    }
+    };
 </script>
