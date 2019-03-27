@@ -6,5 +6,5 @@
 # Run the project
 `npm run serve`
 
-#TODO
+# TODO
 - Extract axios in separate methods
