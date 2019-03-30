@@ -7,4 +7,5 @@
 `npm run serve`
 
 # TODO
-- Extract axios in separate methods
+- Extract axios requests in separate methods
+- Handle errors in axios requests
