@@ -1,6 +1,6 @@
 <template>
     <v-content>
-        <v-container fluid v-for="post in posts" :key="post.id">
+        <v-container fluid grid-list-md v-for="post in posts" :key="post.id">
             <v-layout align-center justify-center>
                 <v-flex xs10>
                     <v-card>
@@ -16,6 +16,11 @@
                 </v-flex>
             </v-layout>
         </v-container>
+        <v-pagination
+                v-model="pagination.page"
+                :length="pagination.totalPages"
+                @input="getPage"
+        ></v-pagination>
     </v-content>
 </template>
 
@@ -35,18 +40,31 @@
                         tags: 'Loading...',
                         creationDate: new Date()
                     }
-                ]
+                ],
+                pagination: {
+                    page: 1,
+                    totalPages: 1,
+                    size: 4
+                }
             }
         },
         mounted() {
-            axios.get('http://localhost:8080/post')
-                .then(response => {
-                    this.posts = response.data;
-                });
+            this.getPage(1);
         },
         methods: {
             read_more_route(post) {
                 return '/post/' + post.id;
+            },
+            getPage(page) {
+                axios.post('http://localhost:8080/post/displayed',
+                    {
+                        page: page,
+                        size: this.pagination.size
+                    })
+                    .then(response => {
+                        this.posts = response.data.content;
+                        this.pagination.totalPages = response.data.totalPages;
+                    })
             }
         }
     }
