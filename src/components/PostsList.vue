@@ -17,6 +17,7 @@
             </v-layout>
         </v-container>
         <v-pagination
+                v-if="pagination.totalPages > 1"
                 v-model="pagination.page"
                 :length="pagination.totalPages"
                 @input="getPage"
