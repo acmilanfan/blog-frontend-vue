@@ -16,13 +16,15 @@
                 </v-flex>
             </v-layout>
         </v-container>
-        <v-pagination
-                v-if="pagination.totalPages > 1"
-                v-model="pagination.page"
-                :length="pagination.totalPages"
-                :total-visible="pagination.visible"
-                @input="getPage"
-        ></v-pagination>
+        <v-layout align-center justify-center>
+            <v-pagination
+                    v-if="pagination.totalPages > 1"
+                    v-model="pagination.page"
+                    :length="pagination.totalPages"
+                    :total-visible="pagination.visible"
+                    @input="getPage"
+            ></v-pagination>
+        </v-layout>
     </v-content>
 </template>
 
