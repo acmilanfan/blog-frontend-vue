@@ -20,6 +20,7 @@
                 v-if="pagination.totalPages > 1"
                 v-model="pagination.page"
                 :length="pagination.totalPages"
+                :total-visible="pagination.visible"
                 @input="getPage"
         ></v-pagination>
     </v-content>
@@ -45,7 +46,8 @@
                 pagination: {
                     page: 1,
                     totalPages: 1,
-                    size: 4
+                    size: 4,
+                    visible: 10
                 }
             }
         },
